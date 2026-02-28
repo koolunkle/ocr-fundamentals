@@ -1,0 +1,20 @@
+# [개발 환경 설정] 로컬 장비 또는 개발계 서버용입니다.
+# 파일명 형식: application-{profile}.yml (예: application-dev.yml)
+ocr:
+  api:
+    # 로컬 분석 서버 주소를 가리킵니다. (보통 로컬호스트 또는 개발계 서버 주소)
+    url: "http://localhost:8000/api/v1/ocr"
+
+logging:
+  # 로그 수준을 세분화하여 상세한 디버깅이 가능하게 합니다.
+  level:
+    root: INFO
+    # com.example.ocr 패키지의 로그는 DEBUG까지 상세하게 남깁니다.
+    "[com.example.ocr]": DEBUG
+    # 스프링 웹 내부 흐름을 볼 수 있도록 DEBUG 수준으로 설정할 수 있습니다.
+    "[org.springframework.web]": INFO
+  
+  # 콘솔에 출력되는 로그 형식을 가독성 있게 지정합니다.
+  pattern:
+    # [시간] [스레드] [레벨] [클래스] - 메시지 형식입니다.
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

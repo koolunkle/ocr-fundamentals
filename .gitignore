@@ -1,0 +1,19 @@
+# [Gradle] 빌드 결과물 및 캐시
+.gradle
+build/
+bin/
+
+# [IDE] 인텔리제이 및 VS Code 설정
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# [OS] 운영체제 임시 파일
+.DS_Store
+Thumbs.db
+
+# [Log] 로그 파일
+*.log
