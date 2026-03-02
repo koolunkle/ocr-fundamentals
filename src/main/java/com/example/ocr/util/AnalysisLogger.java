@@ -62,7 +62,7 @@ public class AnalysisLogger {
         // 상위 10개의 텍스트 조각만 샘플로 보여줍니다.
         String sample = items.stream()
                 .limit(10)
-                .map(RapidModels.Item::text)
+                .map(item -> String.join(" ", item.lines()))
                 .collect(Collectors.joining(" | "));
         
         log.debug("텍스트 샘플: {} ...", sample);

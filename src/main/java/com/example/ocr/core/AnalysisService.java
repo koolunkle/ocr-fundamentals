@@ -1,6 +1,7 @@
 package com.example.ocr.core;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -122,8 +123,18 @@ public class AnalysisService {
         }
 
         // 텍스트와 좌표 데이터 분리 추출
-        var texts = content.stream().map(RapidModels.Item::text).toList();
-        var boxes = content.stream().map(RapidModels.Item::box).map(this::toPoints).toList();
+        var texts = new ArrayList<String>(); 
+        var boxes = new ArrayList<int[][]>(); 
+
+        for (var item : content) {
+            if (item.box() != null && item.lines() != null) {
+                var points = toPoints(item.box());
+                for (var line : item.lines()) {
+                    texts.add(line);
+                    boxes.add(points);
+                }
+            }
+        }
 
         AnalysisLogger.logRaw(pageNum, content);
 
