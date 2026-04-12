@@ -1,51 +1,46 @@
-# OCR Document Analysis Microservice
+# OCR Analysis Service
 
-A high-performance document recognition and analysis microservice built with **Java 17** and **Spring Boot 3.2**. It processes OCR raw text from external engines (RapidOCR) and extracts structured legal document data using fuzzy matching and heuristic parsing algorithms.
+Java-based service for extracting structured legal data and handling document analysis logic.
 
-## Key Features
+## Features
 
-- **Document Structuring**: Extracts court names, case numbers, creditors, debtors, and orders from raw OCR lines.
-- **Modern Java 17+ Architecture**: Leverages `Sealed Interfaces`, `Records`, and `Pattern Matching` for type-safe and declarative data handling.
-- **Hybrid API Endpoints**:
-  - **Standard REST**: Synchronous full-document analysis results.
-  - **Real-time Streaming**: Page-by-page analysis results via **Server-Sent Events (SSE)** using `Flux`.
-- **Fault-Tolerant Engine Integration**: Built-in retry mechanisms and localized error handling to ensure service stability.
+- Document Structuring: Extracts court names, case numbers, and legal entities from raw text.
+- Advanced Parsing: Leverages fuzzy matching and heuristic algorithms for high accuracy.
+- Real-time Streaming: Provides analysis results page-by-page via Server-Sent Events (SSE).
+- Fault Tolerance: Built-in retry mechanisms for external engine integration.
 
 ## Tech Stack
 
-- **Framework**: Spring Boot 3.2.2 (Spring WebFlux for streaming)
-- **Language**: Java 17
-- **Communication**: RestClient (Sync), WebClient (Async/Stream)
-- **Documentation**: SpringDoc OpenAPI 3 (Swagger UI)
-- **Utilities**: Apache Commons Text (Fuzzy matching), TwelveMonkeys ImageIO (TIFF support)
+- Framework: Spring Boot 3.2
+- Language: Java 17
+- Communication: Spring WebFlux (Streaming), RestClient (Sync)
+- Documentation: SpringDoc OpenAPI (Swagger UI)
+- Utilities: Apache Commons Text, TwelveMonkeys ImageIO
 
 ## Getting Started
 
 ### Prerequisites
 
 - Java 17 or higher
-- External OCR Engine (RapidOCR API compatible)
+- OCR Engine Service running (http://localhost:8000)
 
 ### Execution
 
-1. **Development Environment**:
+1. **Development**:
    ```bash
    ./gradlew bootRun --args='--spring.profiles.active=dev'
    ```
 
-2. **Production Build & Run**:
+2. **Production Build**:
    ```bash
    ./gradlew build -x test
    java -jar build/libs/ocr-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
    ```
 
-3. **API Documentation**:
-   Access Swagger UI at: `http://localhost:8080/swagger-ui.html`
-
 ## Project Structure
 
-- `api/`: REST Controllers and API documentation annotations.
-- `core/`: Core business logic including document parsing and fuzzy matching.
+- `api/`: REST Controllers and API documentation.
+- `core/`: Core business logic and parsing algorithms.
 - `integration/`: External API clients and response models.
-- `infra/`: Global configurations, custom exceptions, and error handlers.
-- `util/`: Reusable text sanitization and analysis logging tools.
+- `infra/`: Global configurations and error handlers.
+- `util/`: Reusable text and logging utilities.
