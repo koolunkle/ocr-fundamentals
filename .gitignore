@@ -1,0 +1,49 @@
+# ==========================================
+# Common / IDE / OS
+# ==========================================
+.DS_Store
+Thumbs.db
+*.log
+logs/
+tmp/
+temp/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Environment Variables
+.env
+.env.local
+.env.*
+
+# ==========================================
+# apps/ocr-client (Java / Gradle)
+# ==========================================
+.gradle/
+**/build/
+bin/
+
+# ==========================================
+# apps/ocr-module (Python / uv)
+# ==========================================
+__pycache__/
+*.py[oc]
+dist/
+wheels/
+*.egg-info
+*.spec
+
+# Virtual Environments
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# OCR Specific
+vis/
+apps/ocr-module/models/*.onnx
