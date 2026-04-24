@@ -2,8 +2,9 @@
 
 ![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.13%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.135%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![ONNX](https://img.shields.io/badge/ONNX-RapidOCR-005CED?style=for-the-badge&logo=onnx&logoColor=white)
 
 High-performance document analysis system specialized for legal and judicial documents. This system combines a Python-based OCR engine for high-accuracy text extraction with a Java-based analysis service for structured data reconstruction and domain-specific parsing.
 
@@ -60,7 +61,7 @@ ocr-system/
 
 ### Prerequisites
 * Java 17 or higher
-* Python 3.10 or higher with `uv` package manager
+* Python 3.13 or higher with `uv` package manager
 * Gradle
 
 ### Installation & Execution
