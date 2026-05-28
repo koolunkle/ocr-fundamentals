@@ -1,0 +1,47 @@
+/*
+ * [Build] KIE(Key Information Extraction) Project Build Configuration
+ * 프로젝트 빌드 환경 및 라이브러리 의존성 정의
+ */
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.12'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	/* [Dependency] Core Web & Rest */
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	
+	/* [Dependency] AI Model & Inference */
+	implementation 'com.microsoft.onnxruntime:onnxruntime:1.17.1'
+
+	/* [Dependency] Utils & Productivity */
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	/* [Dependency] Testing Framework */
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

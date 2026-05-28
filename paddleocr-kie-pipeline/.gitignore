@@ -1,0 +1,40 @@
+# [System & IDE]
+.vscode/
+.idea/
+*.swp
+*.bak
+.DS_Store
+Thumbs.db
+
+# [Java / Gradle]
+.gradle/
+build/
+bin/
+out/
+.metadata/
+.recommenders/
+*.class
+*.jar
+*.war
+*.ear
+!gradle-wrapper.jar
+
+# [Python / FastAPI]
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.env
+
+# [Models & Assets]
+apps/kie-module/models/*.onnx
+
+# [Logs]
+*.log
+logs/
