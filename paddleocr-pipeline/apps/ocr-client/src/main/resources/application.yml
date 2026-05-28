@@ -1,0 +1,30 @@
+# [공통 설정] 프로젝트 전체에서 공유하는 기본 설정입니다.
+spring:
+  profiles:
+    # 기본적으로 활성화할 환경(profile)을 지정합니다.
+    # 실행 시 --spring.profiles.active=prod 를 주면 운영 환경으로 전환됩니다.
+    active: dev
+  
+  servlet:
+    multipart:
+      # 파일 업로드 시 개별 파일 및 전체 요청의 최대 용량을 제한합니다. (300MB)
+      max-file-size: 300MB
+      max-request-size: 300MB
+
+# [OpenAPI / Swagger] API 문서화 도구 설정입니다.
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    # 문서화 페이지 접속 경로: http://localhost:8080/swagger-ui.html
+    path: /swagger-ui.html
+    # 즉석에서 API를 테스트해볼 수 있는 기능을 활성화합니다.
+    try-it-out-enabled: true
+    # API 목록을 알파벳 순으로 정렬합니다.
+    operations-sorter: alpha
+
+# [OCR 분석 설정] 분석 프로젝트 전용 속성입니다.
+ocr:
+  api:
+    # 분석 엔진의 기본 URL입니다. (각 환경별 yml에서 구체화됩니다.)
+    url: "http://localhost:8000/api/v1/ocr"

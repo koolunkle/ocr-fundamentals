@@ -1,0 +1,20 @@
+# [운영 환경 설정] 실제 사용자 서비스가 나가는 서버용입니다.
+# 실행 시: java -jar app.jar --spring.profiles.active=prod
+ocr:
+  api:
+    # 운영 환경의 정적 IP 또는 도메인 주소를 지정합니다.
+    url: "http://api.ocr-service.internal/api/v1/ocr"
+
+logging:
+  # 운영 시에는 리소스를 아끼기 위해 로그 양을 줄입니다.
+  level:
+    root: INFO
+    # DEBUG 로그는 끄고, INFO 수준만 남깁니다.
+    "[com.example.ocr]": INFO
+    # 스프링 내부의 불필요한 로그는 보이지 않게 처리합니다.
+    "[org.springframework.web]": WARN
+  
+  # 운영 로그에는 상세 파일명 보다는 핵심 정보 위주로 깔끔하게 기록합니다.
+  pattern:
+    # 운영 로그에는 색상이나 복잡한 클래스명을 줄여서 로그 수집기에 용이하게 만듭니다.
+    console: "[PROD] %d{HH:mm:ss} %-5level %logger{20} - %msg%n"
