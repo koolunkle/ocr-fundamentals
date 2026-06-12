@@ -1,11 +1,11 @@
-# Document Structure Analysis & OCR Engine
+# Tesseract Tess4J & Document Analysis Engine
 
 ![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-Native-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![Tesseract](https://img.shields.io/badge/Tesseract-5.x-blue?style=for-the-badge&logo=tesseract&logoColor=white)
 
-A high-performance Optical Character Recognition (OCR) and document parsing engine built with Spring Boot. This service specializes in extracting structured data from Korean legal and financial documents, analyzing spatial coordinates for table reconstruction, and identifying embedded barcodes.
+A high-performance Optical Character Recognition (OCR) and document parsing engine built with Spring Boot and Tess4J (Tesseract). This service specializes in extracting structured data from Korean legal and financial documents, analyzing spatial coordinates for table reconstruction, and identifying embedded barcodes.
 
 ## Key Features
 
@@ -45,7 +45,7 @@ Direct decoding of barcodes and QR codes from images.
 
 The project follows a multi-module Gradle architecture to ensure modularity and scalability:
 
-    tesseract-java/
+    tesseract-tess4j/
      ├── ecfs-app/      # Main application entry point and configuration
      ├── ecfs-ocr/      # Core OCR, table extraction, and document analysis
      │    ├── adapter/  # Web controllers (In) and External engines (Out)

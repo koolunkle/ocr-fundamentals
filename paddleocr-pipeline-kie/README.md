@@ -1,4 +1,4 @@
-# Document Structure Analysis & OCR Engine
+# PaddleOCR KIE Pipeline & Semantic Analysis
 
 ![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
@@ -42,7 +42,7 @@ The internal API used for raw AI analysis, providing detailed extraction results
 
 The repository follows a clean separation of concerns between the orchestration layer and the inference engine:
 
-    /
+    paddleocr-pipeline-kie/
     ├── apps/
     │   ├── kie-client/   # Spring Boot Gateway (Java 17)
     │   └── kie-module/   # AI Inference Engine (Python 3.13)

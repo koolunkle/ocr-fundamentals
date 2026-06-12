@@ -1,11 +1,11 @@
-# Document Structure Analysis & OCR Engine
+# PaddleOCR ONNX & Document Analysis Engine
 
 ![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-Native-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![ONNX](https://img.shields.io/badge/ONNX-RapidOCR-005CED?style=for-the-badge&logo=onnx&logoColor=white)
 
-A high-performance Optical Character Recognition (OCR) and document parsing engine built with Spring Boot. This service extracts text from images and multi-page documents (TIFF/PNG), analyzes spatial coordinates to reconstruct logical structures, and parses domain-specific data into structured JSON.
+A high-performance Optical Character Recognition (OCR) and document parsing engine built with Spring Boot and ONNX Runtime (RapidOCR). This service extracts text from images and multi-page documents (TIFF/PNG), analyzes spatial coordinates to reconstruct logical structures, and parses domain-specific data into structured JSON.
 
 ## Key Features
 
