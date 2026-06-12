@@ -1,0 +1,19 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    "[com.example.ocr]": DEBUG
+
+ocr:
+  model:
+    base-dir: "C:/models/paddleocr/"
+  rendering:
+    is-debug: false
